@@ -1,8 +1,8 @@
 -----Data Engineering -----
-
 --Creating tables, loading data from csv files, and double checking tables loaded properly.
+
 --Creating departments table.
-CREATE TABLE departments (
+CREATE TABLE departments(
 	dept_no VARCHAR(4) NOT NULL PRIMARY KEY,
 	dept_name VARCHAR(30) NOT NULL
 );

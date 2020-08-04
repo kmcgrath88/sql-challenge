@@ -6,11 +6,11 @@ SELECT * FROM employees;
 
 SELECT e.emp_no, e.last_name, e.first_name, e.sex, s.salary
 FROM employees e
-JOIN salaries s
+JOIN salaries s --Inner Join
 ON e.emp_no = s.emp_no;
 
 --2. List first name, last name, and hire date for employees who were hired in 1986.
-SELECT e.last_name, e.first_name, e.hire_date
+SELECT e.first_name, e.last_name, e.hire_date
 FROM employees e
 WHERE e.hire_date BETWEEN '1986-01-01' AND '1986-12-31';
 
@@ -18,18 +18,18 @@ WHERE e.hire_date BETWEEN '1986-01-01' AND '1986-12-31';
 --department name, the manager's employee number, last name, first name.
 SELECT d.dept_no, d.dept_name, dm.emp_no, e.last_name, e.first_name
 FROM departments d 
-JOIN dept_manager dm
+JOIN dept_manager dm   --Inner Join
 ON d.dept_no = dm.dept_no
-JOIN employees e
+JOIN employees e       --Inner Join
 ON dm.emp_no = e.emp_no;
 
 --4. List the department of each employee with the following information: employee number, 
 --last name, first name, and department name.
 SELECT e.emp_no, e.last_name, e.first_name, d.dept_name
 FROM employees e
-JOIN dept_emp de
+JOIN dept_emp de    --Inner Join
 ON de.emp_no = e.emp_no
-JOIN departments d
+JOIN departments d  --Inner Join
 ON d.dept_no = de.dept_no;
 
 --5. List first name, last name, and sex for employees whose first name is "Hercules" 
@@ -42,9 +42,9 @@ WHERE e.first_name = 'Hercules' AND e.last_name LIKE 'B%';
 --last name, first name, and department name.
 SELECT e.emp_no, e.last_name, e.first_name, d.dept_name
 FROM employees e
-JOIN dept_emp de
+JOIN dept_emp de     --Inner Join
 ON  e.emp_no = de.emp_no 
-JOIN departments d
+JOIN departments d   --Inner Join
 ON de.dept_no = d.dept_no
 WHERE d.dept_name = 'Sales';
 
@@ -52,9 +52,9 @@ WHERE d.dept_name = 'Sales';
 --employee number, last name, first name, and department name.
 SELECT e.emp_no, e.last_name, e.first_name, d.dept_name
 FROM employees e
-JOIN dept_emp de
+JOIN dept_emp de    --Inner Join
 ON  e.emp_no = de.emp_no 
-JOIN departments d
+JOIN departments d  --Inner Join
 ON de.dept_no = d.dept_no
 WHERE d.dept_name = 'Sales' OR d.dept_name = 'Development';
 
