@@ -34,9 +34,7 @@ As you examine the data, you are overcome with a creeping suspicion that the dat
 from sqlalchemy import create_engine<br>
 engine = create_engine('postgresql://localhost:5432/<your_db_name>')<br>
 connection = engine.connect()<br>
-<br>
 2. Create a histogram to visualize the most common salary ranges for employees.<br>
-<br>
 3. Create a bar chart of average salary by title.<br>
 <br>
 Epilogue<br>
